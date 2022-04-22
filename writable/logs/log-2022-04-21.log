@@ -1,0 +1,32 @@
+ERROR - 2022-04-21 20:59:43 --> Table 'app_asvl.user' doesn't exist
+CRITICAL - 2022-04-21 20:59:43 --> Table 'app_asvl.user' doesn't exist
+#0 C:\xampp\htdocs\app-asvl\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 C:\xampp\htdocs\app-asvl\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 C:\xampp\htdocs\app-asvl\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 C:\xampp\htdocs\app-asvl\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\app-asvl\system\Validation\Rules.php(142): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-asvl\system\Validation\Validation.php(292): CodeIgniter\Validation\Rules->is_unique('Elmer Leonel', 'username_user', Array, NULL)
+#6 C:\xampp\htdocs\app-asvl\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('fullname', 'fullname', 'Elmer Leonel', Array, Array)
+#7 C:\xampp\htdocs\app-asvl\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#8 C:\xampp\htdocs\app-asvl\app\Controllers\User.php(40): CodeIgniter\Controller->validate(Array)
+#9 C:\xampp\htdocs\app-asvl\system\CodeIgniter.php(832): App\Controllers\User->verifyRegister()
+#10 C:\xampp\htdocs\app-asvl\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#11 C:\xampp\htdocs\app-asvl\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\app-asvl\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2022-04-21 21:26:37 --> Attempt to read property "username_user" on null
+#0 C:\xampp\htdocs\app-asvl\app\Controllers\User.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read...', 'C:\\xampp\\htdocs...', 41)
+#1 C:\xampp\htdocs\app-asvl\system\CodeIgniter.php(832): App\Controllers\User->verifyRegister()
+#2 C:\xampp\htdocs\app-asvl\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#3 C:\xampp\htdocs\app-asvl\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\app-asvl\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-21 21:56:34 --> syntax error, unexpected token ";"
+#0 C:\xampp\htdocs\app-asvl\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#1 C:\xampp\htdocs\app-asvl\system\Common.php(1089): CodeIgniter\View\View->render('user/register', Array, true)
+#2 C:\xampp\htdocs\app-asvl\app\Controllers\User.php(35): view('user/register')
+#3 C:\xampp\htdocs\app-asvl\system\CodeIgniter.php(832): App\Controllers\User->register()
+#4 C:\xampp\htdocs\app-asvl\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#5 C:\xampp\htdocs\app-asvl\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\app-asvl\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
