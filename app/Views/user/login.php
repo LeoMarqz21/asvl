@@ -26,14 +26,28 @@
             <div class="card col-lg-4 mx-auto">
               <div class="card-body px-5 py-5">
                 <h3 class="card-title text-left mb-3">Iniciar Sesión</h3>
-                <form action="<?=base_url()?>/user/verify-login" method="POST" >
+
+                <?php
+                  session();
+                  $session = \Config\Services::session();
+                  echo $session->getFlashdata('register');
+                  
+                ?>
+
+                <form action="<?=base_url()?>/user/verifyLogin" method="POST" >
                   <div class="form-group mt-2">
                     <label>Nombre de usuario *</label>
-                    <input type="text" class="form-control p_input">
+                    <input type="text" name="username" value="<?=old('username')?>" class="form-control p_input">
+                    <span class="text-danger" style="font-size:12px;" >
+                    <?php echo session('errors.username'); ?>
+                  </span>
                   </div>
                   <div class="form-group">
                     <label>Contraseña *</label>
-                    <input type="text" class="form-control p_input">
+                    <input type="password" name="password" value="<?=old('password')?>" class="form-control p_input">
+                    <span class="text-danger" style="font-size:12px;" >
+                    <?php echo session('errors.password'); ?>
+                  </span>
                   </div>
                   
                   <div class="text-center mt-4">

@@ -24,6 +24,7 @@
                 <?php
                   $session = \Config\Services::session();
                   echo $session->getFlashdata('unsaved');
+                  echo $session->getFlashdata('register');
                 ?>
                 
                 <form action="<?=base_url()?>/user/verifyRegister" method="post">

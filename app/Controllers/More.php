@@ -2,7 +2,7 @@
 
     namespace App\Controllers;
 
-    use App\Models\CategoryModel;
+    use App\Models\UserModel;
 
     class More extends BaseController
     {
@@ -15,11 +15,12 @@
             $this->session = \Config\Services::session();
             $this->validation = \Config\Services::validation();
             $this->costEncrypt = ['cost'=>15];
-            $this->users = new CategoryModel();
+            $this->users = new UserModel();
         }
         public function index()
         {
-            if(is_null($this->session->get('active_login')) == true) return redirect()->to('/user/login');
+            if(is_null($this->session->get('active_login')) == false) return redirect()->to('/');
             
+            return view('user/login');
         }
     }

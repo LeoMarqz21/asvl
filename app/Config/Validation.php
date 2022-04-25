@@ -72,13 +72,21 @@ class Validation
     ];
     
     public $login=[
-        'username'     => 'required',
-        'password'     => 'required',
+        'username'     => 'required|min_length[3]|max_length[15]',
+        'password'     => 'required|min_length[4]|max_length[15]'
     ];
     
     public $login_errors=[
-        'username'     => 'required',
-        'password'     => 'required',
+        'username'=>[
+            'required'=>'Ingresa un numero de usuario',
+            'min_length'=>'Se requieren minimo 3 caracteres',
+            'max_length'=>'No debes sobrepasar los 15 caracteres'
+        ],
+        'password'=>[
+            'required'=>'Ingresa una contraseña',
+            'min_length'=>'Se requieren minimo de 4 caracteres',
+            'max_length'=>'No debes sobrepasar los 15 caracteres'
+        ]
     ];
 
 

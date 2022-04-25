@@ -1,3 +1,11 @@
+<?php
+  $img = 'assets/images/faces/face15.jpg';
+    if(is_null($active_login['image_user']) == false)
+    {
+      //
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -21,19 +29,19 @@
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-          <a class="sidebar-brand brand-logo text-white text-decoration-none" href="index.html">|LM|ASVL|</a>
-          <a class="sidebar-brand brand-logo-mini text-white text-decoration-none" href="index.html">|LM|</a>
+          <a class="sidebar-brand brand-logo text-white text-decoration-none" href="<?=base_url()?>/">|LM|ASVL|</a>
+          <a class="sidebar-brand brand-logo-mini text-white text-decoration-none" href="<?=base_url()?>/">|LM|</a>
         </div>
         <ul class="nav">
           <li class="nav-item profile">
             <div class="profile-desc">
               <div class="profile-pic">
                 <div class="count-indicator">
-                  <img class="img-xs rounded-circle " src="assets/images/faces/face15.jpg" alt="">
+                  <img class="img-xs rounded-circle " src="<?=$img?>" alt="">
                 </div>
                 <div class="profile-name">
-                  <h5 class="mb-0 font-weight-normal">Leo Marqz</h5>
-                  <span>Bienvenido</span>
+                  <h5 class="mb-0 font-weight-normal"><?=$active_login['username_user']?></h5>
+                  <span>Bienvenido jefe</span>
                 </div>
               </div>
 
@@ -52,7 +60,7 @@
                 <div class="dropdown-divider"></div>
                 
                 <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item preview-item">
+                <a href="<?=base_url()?>/user/logout" class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
                     <div class="preview-icon bg-dark rounded-circle">
                       <i class="mdi mdi-logout text-danger"></i>
@@ -70,8 +78,8 @@
           <li class="nav-item nav-category">
             <span class="nav-link">Menu</span>
           </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="index.html">
+          <li class="nav-item menu-items <?=$activateItem['home']?>">
+            <a class="nav-link" href="<?=base_url()?>/">
               <span class="menu-icon">
                 <i class="mdi mdi-home"></i>
               </span>
@@ -79,7 +87,7 @@
             </a>
           </li>
           
-          <li class="nav-item menu-items">
+          <li class="nav-item menu-items <?=$activateItem['create_new_resource']?>">
             <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
               <span class="menu-icon">
                 <i class="mdi mdi-plus-box text-success"></i>
@@ -112,7 +120,7 @@
             </div>
           </li>
           
-          <li class="nav-item menu-items">
+          <li class="nav-item menu-items <?=$activateItem['useful_tools']?>">
             <a class="nav-link" href="#">
               <span class="menu-icon">
                 <i class="mdi mdi-view-grid"></i>
@@ -121,7 +129,7 @@
             </a>
           </li>
       
-          <li class="nav-item menu-items">
+          <li class="nav-item menu-items <?=$activateItem['about_app']?>">
             <a class="nav-link" href="#">
               <span class="menu-icon">
                 <i class="mdi mdi-information text-warning"></i>
@@ -130,7 +138,7 @@
             </a>
           </li>
 
-          <li class="nav-item menu-items">
+          <li class="nav-item menu-items <?=$activateItem['contact']?>">
             <a class="nav-link" href="#">
               <span class="menu-icon">
                 <i class="mdi mdi-contacts text-primary"></i>
@@ -147,7 +155,7 @@
         <!-- partial:partials/_navbar.html -->
         <nav class="navbar p-0 fixed-top d-flex flex-row">
           <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
-            <a class="navbar-brand brand-logo-mini text-white" href="index.html">|LM|ASVL|</a>
+            <a class="navbar-brand brand-logo-mini text-white" href="<?=base_url()?>/">|LM|ASVL|</a>
           </div>
 
           <div class="navbar-menu-wrapper flex-grow d-flex justify-content-end">
@@ -167,7 +175,7 @@
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="createbuttonDropdown">
                   <h6 class="p-3 mb-0">Opciones</h6>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item">
+                  <a class="dropdown-item preview-item ">
                     <div class="preview-thumbnail">
                       <div class="preview-icon bg-dark rounded-circle">
                         <i class="mdi mdi-mdi mdi-link-variant text-primary"></i>
@@ -199,8 +207,9 @@
                
                 <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown">
                   <div class="navbar-profile">
-                    <img class="img-xs rounded-circle" src="assets/images/faces/face15.jpg" alt="">
-                    <p class="mb-0 d-none d-sm-block navbar-profile-name">Leo Marqz</p>
+                    
+                    <img class="img-xs rounded-circle" src="<?=$img?>" alt="">
+                    <p class="mb-0 d-none d-sm-block navbar-profile-name"><?=$active_login['username_user']?></p>
                     <i class="mdi mdi-menu-down d-none d-sm-block"></i>
                   </div>
                 </a>
@@ -219,7 +228,7 @@
                     </div>
                   </a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item">
+                  <a href="<?=base_url()?>/user/logout" class="dropdown-item preview-item">
                     <div class="preview-thumbnail">
                       <div class="preview-icon bg-dark rounded-circle">
                         <i class="mdi mdi-logout text-danger"></i>
@@ -240,3 +249,5 @@
         <!-- partial -->
         <div class="main-panel">
           <div class="content-wrapper">
+
+          <h2 class="text-muted">Inicio</h2>
