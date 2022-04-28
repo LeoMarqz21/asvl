@@ -1,5 +1,5 @@
 <?php
-  $img = 'assets/images/faces/face15.jpg';
+  $img = base_url() . '/assets/images/faces/face15.jpg';
     if(is_null($active_login['image_user']) == false)
     {
       //
@@ -12,13 +12,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>|LM|ASVL|</title>
-    <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
-    <link rel="stylesheet" href="assets/vendors/jvectormap/jquery-jvectormap.css">
-    <link rel="stylesheet" href="assets/vendors/flag-icon-css/css/flag-icon.min.css">
-    <link rel="stylesheet" href="assets/vendors/owl-carousel-2/owl.carousel.min.css">
-    <link rel="stylesheet" href="assets/vendors/owl-carousel-2/owl.theme.default.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="<?=base_url()?>/assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="<?=base_url()?>/assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="<?=base_url()?>/assets/vendors/jvectormap/jquery-jvectormap.css">
+    <link rel="stylesheet" href="<?=base_url()?>/assets/vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="<?=base_url()?>/assets/vendors/owl-carousel-2/owl.carousel.min.css">
+    <link rel="stylesheet" href="<?=base_url()?>/assets/vendors/owl-carousel-2/owl.theme.default.min.css">
+    <link rel="stylesheet" href="<?=base_url()?>/assets/css/style.css">
     <link rel="shortcut icon" href="" />
 
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
@@ -99,7 +99,7 @@
               <ul class="nav flex-column sub-menu">
 
                 <li class="nav-item menu-items">
-                    <a class="nav-link" href="#">
+                    <a href="<?=base_url()?>/link/create" class="nav-link" >
                       <span class="menu-icon">
                         <i class="mdi mdi-link-variant text-primary"></i>
                       </span>
@@ -175,7 +175,7 @@
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="createbuttonDropdown">
                   <h6 class="p-3 mb-0">Opciones</h6>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item ">
+                  <a href="<?=base_url()?>/link/create" class="dropdown-item preview-item ">
                     <div class="preview-thumbnail">
                       <div class="preview-icon bg-dark rounded-circle">
                         <i class="mdi mdi-mdi mdi-link-variant text-primary"></i>
@@ -186,7 +186,7 @@
                     </div>
                   </a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item">
+                  <a href="<?=base_url()?>/category/create" class="dropdown-item preview-item">
                     <div class="preview-thumbnail">
                       <div class="preview-icon bg-dark rounded-circle">
                         <i class="mdi mdi-file-tree text-info"></i>
@@ -250,4 +250,4 @@
         <div class="main-panel">
           <div class="content-wrapper">
 
-          <h2 class="text-muted">Inicio</h2>
+          <h2 class="text-muted"><?=$title?></h2>

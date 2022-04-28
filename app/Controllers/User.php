@@ -18,7 +18,6 @@
             $this->validation = \Config\Services::validation();
             $this->costEncrypt = ['cost'=>15];
             $this->users = new UserModel();
-            helper('isLoggedIn');
         }
         public function index()
         {

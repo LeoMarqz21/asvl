@@ -28,11 +28,11 @@
     </div><!-- page-body-wrapper ends -->
     
     <!-- js basic -->
-    <script src="assets/vendors/js/vendor.bundle.base.js"></script>
-    <script src="assets/js/off-canvas.js"></script>
-    <script src="assets/js/misc.js"></script>
-    <script src="assets/js/settings.js"></script>
-    <script src="assets/js/dashboard.js"></script>
+    <script src="<?=base_url()?>/assets/vendors/js/vendor.bundle.base.js"></script>
+    <script src="<?=base_url()?>/assets/js/off-canvas.js"></script>
+    <script src="<?=base_url()?>/assets/js/misc.js"></script>
+    <script src="<?=base_url()?>/assets/js/settings.js"></script>
+    <script src="<?=base_url()?>/assets/js/dashboard.js"></script>
 
    
   </body>
