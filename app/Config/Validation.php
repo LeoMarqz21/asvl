@@ -91,7 +91,7 @@ class Validation
 
 
     public $link=[
-        'id_category' => 'required',
+        'selected_category' => 'required',
         'title'     => 'required|min_length[3]|max_length[9]',
         'url'     => 'required|valid_url'
     ];

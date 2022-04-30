@@ -12,6 +12,12 @@
         <button type="submit" class="btn btn-outline-behance ">Cargar</button>
     </form>    
 </div>
+<div>
+    <?php
+        $session = \Config\Services::session();
+        echo $session->getFlashdata('delete_link');
+    ?>
+</div>
 <div class="mt-3" style="display:grid; gap:10px;" >
     
     <?php foreach($links as $link): ?>

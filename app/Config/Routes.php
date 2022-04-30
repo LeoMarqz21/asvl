@@ -42,8 +42,9 @@ $routes->get('/user/testView', 'User::testView');
 $routes->get('/category/index', 'Category::index');
 $routes->post('/category/create', 'Category::create');
 
-$routes->post('/link/selectedCategory', 'Link::selectedCategory');
 $routes->get('/link/create', 'Link::create');
+$routes->post('/link/selectedCategory', 'Link::selectedCategory');
+$routes->delete('/link/create/(:num)', 'Link::delete/$1');
 
 /*
  * --------------------------------------------------------------------

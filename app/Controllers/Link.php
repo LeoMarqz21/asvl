@@ -67,7 +67,21 @@ class Link extends BaseController
         $this->validation->reset();
         if($this->validation->setRuleGroup('link'))
         {
-            //
+            $link = [
+                'id_category_link'=>$this->request->getPost('selected_category'),
+                'id_user_link'=>$this->userLogin['id_user'],
+                'title_link'=>$this->request->getPost('title'),
+                'url_link'=>$this->request->getPost('url'),
+            ];
+            if($this->links->save($link))
+            {
+                $this->session->setFlashdata('save_link', "<div class='alert alert-primary' role='alert'>Save Link!!!</div>");
+                return redirect()->back();
+            }else
+            {
+                $this->session->setFlashdata('save_link', "<div class='alert alert-danger' role='alert'>link could not be saved!!!</div>");
+                return redirect()->back();
+            }
         }else{
             return redirect()->back()->withInput()->with('errors', $this->validation->getErrors());
         }
@@ -78,9 +92,22 @@ class Link extends BaseController
         //code...
     }
 
-    public function delete($id_delete)
+    public function delete($id_delete = null)
     {
-        //
+        if($id_delete != null)
+        {
+           if( $this->links->where('id_link', $id_delete)
+                        ->where('id_user_link', $this->userLogin['id_user'])
+                        ->delete()
+           ){
+               $this->session->setFlashdata('delete_link', "<div class='alert alert-primary' role='alert'>link removed!!</div>");
+            }else
+            {
+               $this->session->setFlashdata('delete_link', "<div class='alert alert-danger' role='alert'>link could not be removed</div>");
+           }
+        
+        }
+        return redirect()->back();
     }
 
     public function loadCategory()

@@ -2,10 +2,15 @@
 <div class="row mt-4">
     <div class="col-sm-4">
         <div class="card p-4">
-            <form action="<?= base_url() ?>/link/saveLink" method="POST">
+            <?php
+              session();
+              $session = \Config\Services::session();
+              echo $session->getFlashdata('save_link');
+            ?>
+            <form action="<?= base_url() ?>/link/saveLink" method="delete">
                 <div class="form-group mt-2">
                     <label>Titulo *</label>
-                    <input type="text" name="username" value="<?= old('title') ?>" class="form-control p_input" required >
+                    <input type="text" name="title" value="<?= old('title') ?>" class="form-control p_input" required >
                     <span class="text-danger" style="font-size:12px;">
                         <?php echo session('errors.title'); ?>
                     </span>
@@ -19,13 +24,13 @@
                 </div>
                 <div class="form-group">
                     <label>Categoria a vincular *</label>
-                    <select name="id_category" class="form-control text-white ">
+                    <select name="selected_category" class="form-control text-white ">
                         <?php foreach($categories as $category): ?>
                             <option value="<?=$category->id_category?>"><?=$category->title_category?></option>
                         <?php endforeach; ?>
                     </select>
                     <span class="text-danger" style="font-size:12px;">
-                        <?php echo session('errors.url'); ?>
+                        <?php echo session('errors.selected_category'); ?>
                     </span>
                 </div>
 
