@@ -75,10 +75,12 @@
 
             </div>
           </li>
+
           <li class="nav-item nav-category">
             <span class="nav-link">Menu</span>
           </li>
-          <li class="nav-item menu-items <?=$activateItem['home']?>">
+
+          <li class="nav-item menu-items" >
             <a class="nav-link" href="<?=base_url()?>/">
               <span class="menu-icon">
                 <i class="mdi mdi-home"></i>
@@ -87,8 +89,8 @@
             </a>
           </li>
           
-          <li class="nav-item menu-items <?=$activateItem['create_new_resource']?>">
-            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+          <li class="nav-item menu-items ">
+            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="true" aria-controls="auth">
               <span class="menu-icon">
                 <i class="mdi mdi-plus-box text-success"></i>
               </span>
@@ -98,7 +100,7 @@
             <div class="collapse" id="auth">
               <ul class="nav flex-column sub-menu">
 
-                <li class="nav-item menu-items">
+                <li class="nav-item ">
                     <a href="<?=base_url()?>/link/create" class="nav-link" >
                       <span class="menu-icon">
                         <i class="mdi mdi-link-variant text-primary"></i>
@@ -106,31 +108,31 @@
                       <span class="menu-title">Nuevo Enlace</span>
                     </a>
                   </li>
-                  <!-- <div class="dropdown-divider"></div> -->
-                  <li class="nav-item menu-items">
-                    <a class="nav-link" href="#">
+
+                <li class="nav-item ">
+                    <a href="<?=base_url()?>/category" class="nav-link" >
                       <span class="menu-icon">
-                        <i class="mdi mdi-file-tree text-info"></i>
+                      <i class="mdi mdi-file-tree text-info"></i>
                       </span>
                       <span class="menu-title">Nueva Categoria</span>
                     </a>
-                  </li>
+                </li>
 
               </ul>
             </div>
           </li>
           
-          <li class="nav-item menu-items <?=$activateItem['useful_tools']?>">
-            <a class="nav-link" href="#">
+          <li class="nav-item menu-items" >
+            <a class="nav-link" href="<?=base_url()?>/more/index">
               <span class="menu-icon">
-                <i class="mdi mdi-view-grid"></i>
+              <i class="mdi mdi-view-grid"></i>
               </span>
               <span class="menu-title">Herramientas utiles</span>
             </a>
           </li>
       
-          <li class="nav-item menu-items <?=$activateItem['about_app']?>">
-            <a class="nav-link" href="#">
+          <li class="nav-item menu-items ">
+            <a class="nav-link" href="<?=base_url()?>/more/about">
               <span class="menu-icon">
                 <i class="mdi mdi-information text-warning"></i>
               </span>
@@ -138,8 +140,8 @@
             </a>
           </li>
 
-          <li class="nav-item menu-items <?=$activateItem['contact']?>">
-            <a class="nav-link" href="#">
+          <li class="nav-item menu-items ">
+            <a class="nav-link" href="<?=base_url()?>/more/contact">
               <span class="menu-icon">
                 <i class="mdi mdi-contacts text-primary"></i>
               </span>
@@ -186,7 +188,7 @@
                     </div>
                   </a>
                   <div class="dropdown-divider"></div>
-                  <a href="<?=base_url()?>/category/create" class="dropdown-item preview-item">
+                  <a href="<?=base_url()?>/category/index" class="dropdown-item preview-item">
                     <div class="preview-thumbnail">
                       <div class="preview-icon bg-dark rounded-circle">
                         <i class="mdi mdi-file-tree text-info"></i>
@@ -251,3 +253,5 @@
           <div class="content-wrapper">
 
           <h2 class="text-muted"><?=$title?></h2>
+
+         

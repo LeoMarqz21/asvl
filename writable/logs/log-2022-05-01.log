@@ -1,0 +1,65 @@
+CRITICAL - 2022-05-01 12:55:26 --> Undefined property: App\Controllers\More::$userLogin
+#0 C:\xampp\htdocs\app-asvl\app\Controllers\More.php(23): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 23)
+#1 C:\xampp\htdocs\app-asvl\system\CodeIgniter.php(832): App\Controllers\More->index()
+#2 C:\xampp\htdocs\app-asvl\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\More))
+#3 C:\xampp\htdocs\app-asvl\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\app-asvl\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-01 12:57:35 --> Undefined property: App\Controllers\More::$userLogin
+#0 C:\xampp\htdocs\app-asvl\app\Controllers\More.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 24)
+#1 C:\xampp\htdocs\app-asvl\system\CodeIgniter.php(832): App\Controllers\More->index()
+#2 C:\xampp\htdocs\app-asvl\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\More))
+#3 C:\xampp\htdocs\app-asvl\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\app-asvl\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-01 12:58:26 --> Call to undefined function App\Controllers\activateMenuItem()
+#0 C:\xampp\htdocs\app-asvl\system\CodeIgniter.php(832): App\Controllers\More->index()
+#1 C:\xampp\htdocs\app-asvl\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\More))
+#2 C:\xampp\htdocs\app-asvl\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\app-asvl\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-05-01 12:58:28 --> Call to undefined function App\Controllers\activateMenuItem()
+#0 C:\xampp\htdocs\app-asvl\system\CodeIgniter.php(832): App\Controllers\More->index()
+#1 C:\xampp\htdocs\app-asvl\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\More))
+#2 C:\xampp\htdocs\app-asvl\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\app-asvl\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-05-01 12:58:30 --> Call to undefined function App\Controllers\activateMenuItem()
+#0 C:\xampp\htdocs\app-asvl\system\CodeIgniter.php(832): App\Controllers\More->index()
+#1 C:\xampp\htdocs\app-asvl\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\More))
+#2 C:\xampp\htdocs\app-asvl\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\app-asvl\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-05-01 14:02:23 --> Undefined variable $activateItem
+#0 C:\xampp\htdocs\app-asvl\app\Views\header.php(256): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 256)
+#1 C:\xampp\htdocs\app-asvl\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\app-asvl\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\app-asvl\system\Common.php(1089): CodeIgniter\View\View->render('header', Array, true)
+#4 C:\xampp\htdocs\app-asvl\app\Controllers\Category.php(30): view('header', Array)
+#5 C:\xampp\htdocs\app-asvl\system\CodeIgniter.php(832): App\Controllers\Category->index()
+#6 C:\xampp\htdocs\app-asvl\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+#7 C:\xampp\htdocs\app-asvl\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\app-asvl\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-01 14:02:25 --> Undefined variable $activateItem
+#0 C:\xampp\htdocs\app-asvl\app\Views\header.php(256): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 256)
+#1 C:\xampp\htdocs\app-asvl\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\app-asvl\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\app-asvl\system\Common.php(1089): CodeIgniter\View\View->render('header', Array, true)
+#4 C:\xampp\htdocs\app-asvl\app\Controllers\Category.php(30): view('header', Array)
+#5 C:\xampp\htdocs\app-asvl\system\CodeIgniter.php(832): App\Controllers\Category->index()
+#6 C:\xampp\htdocs\app-asvl\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+#7 C:\xampp\htdocs\app-asvl\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\app-asvl\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-01 14:02:34 --> Undefined variable $activateItem
+#0 C:\xampp\htdocs\app-asvl\app\Views\header.php(256): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 256)
+#1 C:\xampp\htdocs\app-asvl\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\app-asvl\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\app-asvl\system\Common.php(1089): CodeIgniter\View\View->render('header', Array, true)
+#4 C:\xampp\htdocs\app-asvl\app\Controllers\Category.php(30): view('header', Array)
+#5 C:\xampp\htdocs\app-asvl\system\CodeIgniter.php(832): App\Controllers\Category->index()
+#6 C:\xampp\htdocs\app-asvl\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+#7 C:\xampp\htdocs\app-asvl\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\app-asvl\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}

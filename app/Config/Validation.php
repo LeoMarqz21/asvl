@@ -90,10 +90,41 @@ class Validation
     ];
 
 
-    public $link=[
-        'selected_category' => 'required',
-        'title'     => 'required|min_length[3]|max_length[9]',
-        'url'     => 'required|valid_url'
+    public $link = [
+        'id_category_link' => 'required',
+        'title_link'     => 'required|min_length[3]|max_length[9]',
+        'url_link'     => 'required|valid_url'
+    ];
+    public $link_errors = [
+        'id_category_link' => [
+            'required'=>''
+        ],
+        'title_link'=>[
+            'required'=>"",
+            'min_length'=>'',
+            'max_length'=>''
+        ],
+        'url_link' => [
+            'required'=>'',
+            'valid_url'=>''
+        ]
+    ];
+    public $category = [
+        'title_category'     => 'required|min_length[3]|max_length[10]',
+        'description_category'     => 'required|min_length[5]|max_length[99]'
+    ];
+    public $category_errors = [
+        
+        'title_category'=>[
+            'required'=>"",
+            'min_length'=>'',
+            'max_length'=>''
+        ],
+        'description_category' => [
+            'required'=>'',
+            'min_length'=>'',
+            'max_length'=>''
+        ]
     ];
 
 

@@ -24,33 +24,26 @@
     <article class="bg-dark p-3 d-flex justify-content-around border-bottom border-right rounded" >
         <h5 class="text-white fw-bold" ><?=$link->title_link?></h5>
             <div class="d-flex flex-wrap justify-content-end" style="gap:5px;">
-                <a href="#" class="btn btn-outline-primary btn-sm">Abrir <i class="mdi mdi-google-chrome"></i></a>
-                <a href="#" class="btn btn-outline-success btn-sm">Copiar <i class="mdi mdi-content-copy"></i></a>
+                <a href="<?=$link->url_link?>" target="_blank" class="btn btn-outline-primary btn-sm">Abrir <i class="mdi mdi-google-chrome"></i></a>
+                <a href="#" onclick="copyUrl('<?=$link->url_link?>')" class="btn btn-outline-success btn-sm">Copiar <i class="mdi mdi-content-copy"></i></a>
                 <a href="<?=base_url()?>/link/delete/<?=$link->id_link?>" class="btn btn-outline-danger btn-sm">Eliminar <i class="mdi mdi-delete-outline"></i></a>
             </div>
     </article>
     
 <?php endforeach; ?>
 
-    <!-- <article class="bg-dark p-3 d-flex justify-content-around border-bottom border-right rounded" >
-        <h5 class="text-white fw-bold" >Git</h5>
-            <div class="d-flex flex-wrap justify-content-end" style="gap:5px;">
-                <a href="#" class="btn btn-outline-primary btn-sm">Abrir <i class="mdi mdi-google-chrome"></i></a>
-                <a href="#" class="btn btn-outline-success btn-sm">Copiar <i class="mdi mdi-content-copy"></i></a>
-                <a href="#" class="btn btn-outline-danger btn-sm">Eliminar <i class="mdi mdi-delete-outline"></i></a>
-            </div>
-    </article>
-    <article class="bg-dark p-3 d-flex justify-content-around border-bottom border-right rounded" >
-        <h5 class="text-white fw-bold" >Azure</h5>
-            <div class="d-flex flex-wrap justify-content-end" style="gap:5px;">
-                <a href="#" class="btn btn-outline-primary btn-sm">Abrir <i class="mdi mdi-google-chrome"></i></a>
-                <a href="#" class="btn btn-outline-success btn-sm">Copiar <i class="mdi mdi-content-copy"></i></a>
-                <a href="#" class="btn btn-outline-danger btn-sm">Eliminar <i class="mdi mdi-delete-outline"></i></a>
-            </div>
-    </article> -->
-    
-   
-
 </div>
+
+<script>
+    
+    function copyUrl(url)
+    {
+        let content = url
+        navigator.clipboard.writeText(content)
+        .then(()=>alert('Enlace copiado !!'))
+        .catch((err)=>alert('No se copio el enlace!!'))
+    }
+
+</script>
 
 

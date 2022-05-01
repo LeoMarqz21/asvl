@@ -1,36 +1,36 @@
 
 <div class="row mt-4">
-    <div class="col-sm-4">
+    <div class="col-sm-5">
         <div class="card p-4">
             <?php
               session();
               $session = \Config\Services::session();
               echo $session->getFlashdata('save_link');
             ?>
-            <form action="<?= base_url() ?>/link/saveLink" method="delete">
+            <form action="<?= base_url() ?>/link/saveLink" method="post">
                 <div class="form-group mt-2">
                     <label>Titulo *</label>
-                    <input type="text" name="title" value="<?= old('title') ?>" class="form-control p_input" required >
+                    <input type="text" name="title_link" value="<?= old('title_link') ?>" class="form-control p_input" required >
                     <span class="text-danger" style="font-size:12px;">
-                        <?php echo session('errors.title'); ?>
+                        <?php echo session('errors.title_link'); ?>
                     </span>
                 </div>
                 <div class="form-group">
                     <label>Url *</label>
-                    <input type="url" name="url" value="<?= old('password') ?>" class="form-control p_input" required>
+                    <input type="url" name="url_link" value="<?= old('url_link') ?>" class="form-control p_input" required>
                     <span class="text-danger" style="font-size:12px;">
-                        <?php echo session('errors.url'); ?>
+                        <?php echo session('errors.url_link'); ?>
                     </span>
                 </div>
                 <div class="form-group">
                     <label>Categoria a vincular *</label>
-                    <select name="selected_category" class="form-control text-white ">
+                    <select name="id_category_link" class="form-control text-white ">
                         <?php foreach($categories as $category): ?>
                             <option value="<?=$category->id_category?>"><?=$category->title_category?></option>
                         <?php endforeach; ?>
                     </select>
                     <span class="text-danger" style="font-size:12px;">
-                        <?php echo session('errors.selected_category'); ?>
+                        <?php echo session('errors.id_category_link'); ?>
                     </span>
                 </div>
 

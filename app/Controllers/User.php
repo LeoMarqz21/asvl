@@ -112,14 +112,24 @@
             }
         }
 
-        public function saveUser()
+        public function editUser()
         {
-            //code...
+            if(is_null($this->session->get('active_login')) != false) return redirect()->to('/user/login');
+            if(true) return;
         }
 
         public function deleteUser()
         {
-            //code...
+            if(is_null($this->session->get('active_login')) != false) return redirect()->to('/user/login');
+            if($this->users->where('id_user', $this->userLogin['id_user'])->delete())
+            {
+                $this->session->remove('active_login');
+                return redirect()->to('/user/login');
+            }else
+            {
+                $this->session->setFlashdata('delete_user', "<div class='alert alert-danger' role='alert'>could not delete this user, try again later</div>");
+                return redirect()->back();
+            }
         }
 
         public function logout()
