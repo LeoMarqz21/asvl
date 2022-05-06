@@ -128,4 +128,41 @@ class Validation
     ];
 
 
+    public $editData=[
+        'fullname'     => 'required|min_length[5]|max_length[100]',
+        'username'     => 'required|min_length[3]|max_length[15]',
+    ];
+    
+    public $editData_errors = [
+        'fullname' => [
+            'required'=>'Ingresa tu nombre completo por favor!!',
+            'min_length'=>'Se requieren minimo 5 caracteres',
+            'max_length'=>'No debes sobrepasar los 100 caracteres' 
+        ],
+        'username'=>[
+            'required'=>'Ingresa un numero de usuario',
+            'min_length'=>'Se requieren minimo 3 caracteres',
+            'max_length'=>'No debes sobrepasar los 15 caracteres'
+        ]
+    ];
+    
+
+    public $editPass = [
+        'password'     => 'required|min_length[4]|max_length[15]',
+        'pass_confirm' => 'required|matches[password]'
+    ];
+    public $editPass_errors = [
+        
+        'password'=>[
+            'required'=>'Ingresa una contraseña',
+            'min_length'=>'Se requieren minimo de 4 caracteres',
+            'max_length'=>'No debes sobrepasar los 15 caracteres'
+        ],
+        'pass_confirm'=>[
+            'required'=>'Ingresa la misma contraseña del campo de contraseña',
+            'matches'=>'Las contraseñas no son similares!!'
+        ]
+    ];
+
+
 }

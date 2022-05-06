@@ -3,13 +3,17 @@
     namespace App\Controllers;
 
     use App\Models\UserModel;
+    use App\Models\CategoryModel;
 
     class User extends BaseController
     {
         private $session;
         private $validation;
         private $users;
+        private $categories;
         private $costEncrypt;
+        private $userLogin;
+
 
 
         public function __construct()
@@ -18,6 +22,8 @@
             $this->validation = \Config\Services::validation();
             $this->costEncrypt = ['cost'=>15];
             $this->users = new UserModel();
+            $this->categories = new CategoryModel();
+            $this->userLogin = $this->session->get('active_login');
         }
         public function index()
         {
@@ -48,6 +54,16 @@
                                 'image_user'=>$userDB->image_user
                             ];
                             $this->session->set('active_login', $userData);
+                            $exists_category = $this->categories->where('id_user_category', $userData['id_user'])->first();
+                            if(is_null($exists_category))
+                            {
+                                $create_category_default = [
+                                    'id_user_category'=>$userData['id_user'],
+                                    'title_category'=>'default',
+                                    'description_category' => 'categoria default [' . $userData['username_user'] . ']'
+                                ];
+                                $this->categories->save($create_category_default);
+                            }
                             return redirect()->to('/');
                         }else{
                             return redirect()->back()->withInput()->with('errors', ['password' =>'verify your password or username']);
@@ -92,6 +108,7 @@
                         
                         if($this->users->save($user))
                         {
+                            
                             $this->session->setFlashdata('register', "<div class='alert alert-primary' role='alert'>successful registration</div>");
                             return redirect()->back();
                         }else{
@@ -115,7 +132,35 @@
         public function editUser()
         {
             if(is_null($this->session->get('active_login')) != false) return redirect()->to('/user/login');
-            if(true) return;
+            $header = ['active_login'=>$this->session->get('active_login'),  'title'=>'Mi perfil'];
+            return view('header', $header) . view('user/edit') . view('footer');
+        }
+        
+        public function editPass()
+        {
+            if(is_null($this->session->get('active_login')) != false) return redirect()->to('/user/login');
+            $this->validation->reset();
+            $this->validation->setRuleGroup('editPass');
+            if($this->validate($this->validation->getRuleGroup('editPass')))
+            {
+                if($this->users->set('password_user', password_hash($this->request->getPost('password'),PASSWORD_BCRYPT, $this->costEncrypt ))->where('id_user', $this->userLogin['id_user'])->update())
+                {
+                    $this->session->setFlashdata('editpass', "<div class='alert alert-primary' role='alert'>password successfully updated</div>");
+                    return redirect()->back();
+                }else{
+                    $this->session->setFlashdata('editpass', "<div class='alert alert-danger' role='alert'>password could not be updated </div>");
+                    return redirect()->back();
+                }
+            }else
+            {
+                return redirect()->back()->withInput()->with('errors', $this->validation->getErrors());
+            }
+        }
+        
+        public function editData()
+        {
+            if(is_null($this->session->get('active_login')) != false) return redirect()->to('/user/login');
+
         }
 
         public function deleteUser()

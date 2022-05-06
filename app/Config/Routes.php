@@ -37,7 +37,9 @@ $routes->get('/user/login', 'User::index');
 $routes->get('/user/register', 'User::register');
 $routes->get('/user/verifyLogin', 'User::verifyLogin');
 $routes->get('/user/verifyRegister', 'User::verifyRegister');
-$routes->get('/user/testView', 'User::testView');
+$routes->get('/user/edit', 'User::editUser');
+$routes->post('/user/edit-pass', 'User::editPass');
+$routes->post('/user/edit-data-base', 'User::editData');
 
 $routes->get('/category/index', 'Category::index');
 $routes->post('/category/saveCategory', 'Category::saveCategory');

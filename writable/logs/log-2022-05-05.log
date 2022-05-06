@@ -1,0 +1,34 @@
+CRITICAL - 2022-05-05 20:51:09 --> syntax error, unexpected token "}", expecting ";"
+#0 C:\xampp\htdocs\app-asvl\system\Autoloader\Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs...')
+#1 C:\xampp\htdocs\app-asvl\system\Autoloader\Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 C:\xampp\htdocs\app-asvl\system\CodeIgniter.php(797): class_exists('\\App\\Controller...', true)
+#4 C:\xampp\htdocs\app-asvl\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->startController()
+#5 C:\xampp\htdocs\app-asvl\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\app-asvl\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-05 20:53:22 --> Undefined property: App\Controllers\User::$userLogin
+#0 C:\xampp\htdocs\app-asvl\app\Controllers\User.php(132): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 132)
+#1 C:\xampp\htdocs\app-asvl\system\CodeIgniter.php(832): App\Controllers\User->editUser()
+#2 C:\xampp\htdocs\app-asvl\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#3 C:\xampp\htdocs\app-asvl\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\app-asvl\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-05 20:53:23 --> Undefined property: App\Controllers\User::$userLogin
+#0 C:\xampp\htdocs\app-asvl\app\Controllers\User.php(132): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 132)
+#1 C:\xampp\htdocs\app-asvl\system\CodeIgniter.php(832): App\Controllers\User->editUser()
+#2 C:\xampp\htdocs\app-asvl\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#3 C:\xampp\htdocs\app-asvl\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\app-asvl\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-05 21:06:36 --> Undefined array key "fullname"
+#0 C:\xampp\htdocs\app-asvl\app\Views\user\edit.php(8): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 8)
+#1 C:\xampp\htdocs\app-asvl\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\app-asvl\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\app-asvl\system\Common.php(1089): CodeIgniter\View\View->render('user/edit', Array, true)
+#4 C:\xampp\htdocs\app-asvl\app\Controllers\User.php(134): view('user/edit')
+#5 C:\xampp\htdocs\app-asvl\system\CodeIgniter.php(832): App\Controllers\User->editUser()
+#6 C:\xampp\htdocs\app-asvl\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#7 C:\xampp\htdocs\app-asvl\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\app-asvl\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
