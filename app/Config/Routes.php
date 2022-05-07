@@ -46,7 +46,7 @@ $routes->post('/category/saveCategory', 'Category::saveCategory');
 
 $routes->get('/link/create', 'Link::create');
 $routes->post('/link/selectedCategory', 'Link::selectedCategory');
-$routes->delete('/link/create/(:num)', 'Link::delete/$1');
+$routes->delete('/link/delete/(:num)', 'Link::delete/$1');
 
 $routes->get('more/tools', 'More::index');
 

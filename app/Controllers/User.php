@@ -40,6 +40,11 @@
                 if($this->validate($this->validation->getRuleGroup('login')))
                 {
                     $userDB = $this->users->where('username_user', $this->request->getPost('username'))->first();
+                    if(is_null($userDB))
+                    {
+                        $this->session->setFlashdata('notexists', "<div class='alert alert-danger' role='alert'>this user does not exist</div>");
+                        return redirect()->back();
+                    }
                     $result = !is_null($userDB)?$userDB->username_user:'';
                     $req = $this->request->getPost('username');
                     if($req == $result)
@@ -50,7 +55,6 @@
                                 'id_user'=>$userDB->id_user,
                                 'fullname_user'=>$userDB->fullname_user,
                                 'username_user'=>$userDB->username_user,
-                                'password' =>$userDB->password_user,
                                 'image_user'=>$userDB->image_user
                             ];
                             $this->session->set('active_login', $userData);
@@ -133,7 +137,8 @@
         {
             if(is_null($this->session->get('active_login')) != false) return redirect()->to('/user/login');
             $header = ['active_login'=>$this->session->get('active_login'),  'title'=>'Mi perfil'];
-            return view('header', $header) . view('user/edit') . view('footer');
+            $data = ['id_user'=>$this->userLogin['id_user']];
+            return view('header', $header) . view('user/edit', $data) . view('footer');
         }
         
         public function editPass()
@@ -160,6 +165,36 @@
         public function editData()
         {
             if(is_null($this->session->get('active_login')) != false) return redirect()->to('/user/login');
+            $this->validation->reset();
+            $this->validation->setRuleGroup('editData');
+            if($this->validate($this->validation->getRuleGroup('editData')))
+            {
+                $data = [
+                    'fullname_user'=>$this->request->getPost('fullname'),
+                    'username_user'=>$this->request->getPost('username')
+                ];
+                if( $this->users->set($data)->where('id_user', $this->userLogin['id_user'])->update() )
+                {
+                    $UserDB = $this->users->where('id_user', $this->userLogin['id_user'])->first();
+                    $UserData = [
+                        'id_user'=>$UserDB->id_user,
+                        'fullname_user'=>$UserDB->fullname_user,
+                        'username_user'=>$UserDB->username_user,
+                        'image_user'=>$UserDB->image_user
+                    ];
+                    $this->session->set('active_login', $UserData);
+                    $this->userLogin = 
+                    $this->session->setFlashdata('editdata', "<div class='alert alert-primary' role='alert'>password successfully updated</div>");
+                    return redirect()->back();
+                }else
+                {
+                    $this->session->setFlashdata('editdata', "<div class='alert alert-primary' role='alert'>password successfully updated</div>");
+                    return redirect()->back();
+                }
+            }else
+            {
+                return redirect()->back()->withInput()->with('errors', $this->validation->getErrors());
+            }
 
         }
 

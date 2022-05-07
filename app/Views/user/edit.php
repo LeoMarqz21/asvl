@@ -1,7 +1,16 @@
+<?php
+$session = \Config\Services::session();
+?>
+
+<div class=" mt-2">
+    Clic aqui: <a class="btn btn-outline-danger btn-sm" href="<?=base_url()?>/user/delete/<?=$id_user?>" >Eliminar esta cuenta</a>
+</div>
+
 <div class="row mt-4">
     <div class="col-sm-5">
         <form action="<?= base_url() ?>/user/edit-data-base" method="post">
             <h4 class="mb-3 bg-white text-black rounded p-1">Datos Base</h4>
+            <?= $session->getFlashdata('editdata') ?>
             <div class="form-group">
                 <label>Nombre Completo *</label>
                 <input type="text" name="fullname" value="<?php echo old('fullname') ? old('fullname') : $active_login['fullname_user']; ?>" class="form-control p_input" title="rell" required />
@@ -23,6 +32,9 @@
                 <button type="submit" class="btn btn-primary btn-block enter-btn">Actualizar datos base</button>
             </div>
 
+
+
+
         </form>
 
     </div>
@@ -35,6 +47,7 @@
         <hr class="bg-warning mb-5 " />
         <form action="<?= base_url() ?>/user/edit-pass" method="post">
             <h4 class="mb-3 bg-white text-black rounded p-1">Cambiar Contraseña</h4>
+            <?= $session->getFlashdata('editpass') ?>
             <div class="form-group">
                 <label>Contraseña *</label>
                 <input type="password" value="<?= old('password') ?>" name="password" class="form-control p_input" required />

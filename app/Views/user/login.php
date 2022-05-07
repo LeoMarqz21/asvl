@@ -31,7 +31,7 @@
                   session();
                   $session = \Config\Services::session();
                   echo $session->getFlashdata('register');
-                  
+                  echo $session->getFlashdata('notexists')
                 ?>
 
                 <form action="<?=base_url()?>/user/verifyLogin" method="POST" >

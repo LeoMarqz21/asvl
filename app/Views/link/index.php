@@ -6,7 +6,7 @@
         <select class="bg-white btn-sm mr-1" name="selected_category">
             <option value="todos">Todos</option>
             <?php foreach($categories as $category): ?>
-            <option value="<?=$category->id_category?>" ><?=$category->id_category?> <?=$category->title_category?></option>
+            <option value="<?=$category->id_category?>" ><?=$category->title_category?></option>
             <?php endforeach; ?>
         </select>
         <button type="submit" class="btn btn-outline-behance ">Cargar</button>

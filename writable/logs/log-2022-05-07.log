@@ -1,0 +1,8 @@
+CRITICAL - 2022-05-07 02:08:39 --> Call to undefined function CodeIgniter\locale_set_default()
+#0 C:\xampp\htdocs\app-asvl\system\bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#1 C:\xampp\htdocs\app-asvl\public\index.php(28): require('C:\\xampp\\htdocs...')
+#2 {main}
+CRITICAL - 2022-05-07 02:27:50 --> Call to undefined function CodeIgniter\locale_set_default()
+#0 C:\xampp\htdocs\app-asvl\system\bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#1 C:\xampp\htdocs\app-asvl\public\index.php(28): require('C:\\xampp\\htdocs...')
+#2 {main}
